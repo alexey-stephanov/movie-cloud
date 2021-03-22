@@ -1,0 +1,2 @@
+rootProject.name = "Movie Cloud"
+include ':app'
