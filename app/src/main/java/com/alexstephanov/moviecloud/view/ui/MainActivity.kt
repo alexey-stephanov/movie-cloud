@@ -1,7 +1,8 @@
-package com.alexstephanov.moviecloud
+package com.alexstephanov.moviecloud.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.alexstephanov.moviecloud.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
