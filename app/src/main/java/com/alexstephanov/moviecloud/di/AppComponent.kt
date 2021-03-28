@@ -2,12 +2,14 @@ package com.alexstephanov.moviecloud.di
 
 import android.content.Context
 import com.alexstephanov.moviecloud.view.ui.MainActivity
+import com.alexstephanov.moviecloud.view.ui.fragments.MovieDetailsFragment
+import com.alexstephanov.moviecloud.view.ui.fragments.MoviesFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RetrofitModule::class, ViewModelFactoryModule::class])
+@Component(modules = [RetrofitModule::class, ViewModelFactoryModule::class, MoviesModule::class])
 interface AppComponent {
 
     @Component.Factory
@@ -16,4 +18,6 @@ interface AppComponent {
     }
 
     fun inject(mainActivity: MainActivity)
+    fun inject(moviesFragment: MoviesFragment)
+    fun inject(movieDetailsFragment: MovieDetailsFragment)
 }
