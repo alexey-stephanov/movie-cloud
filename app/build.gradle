@@ -33,6 +33,7 @@ android {
         beta {
             dimension "api"
             buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "IMAGES_URL", '"https://image.tmdb.org/t/p/w500"'
         }
     }
     buildFeatures {

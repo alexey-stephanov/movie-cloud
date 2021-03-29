@@ -9,7 +9,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RetrofitModule::class, ViewModelFactoryModule::class, MoviesModule::class])
+@Component(modules = [RetrofitModule::class, ViewModelFactoryModule::class, MoviesModule::class, MovieDetailsModule::class])
 interface AppComponent {
 
     @Component.Factory

@@ -1,4 +1,4 @@
-package com.alexstephanov.moviecloud.view.viewmodels
+package com.alexstephanov.moviecloud.view.viewmodels.factories
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

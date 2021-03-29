@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.alexstephanov.moviecloud.BuildConfig
 import com.alexstephanov.moviecloud.R
 import com.alexstephanov.moviecloud.databinding.MovieItemBinding
 import com.alexstephanov.moviecloud.entities.MoviesResponse
@@ -27,7 +28,7 @@ class MoviesListAdapter(private val listener: OnMovieClickListener) :
 
         fun bind(movie: MoviesResponse.MovieModel) {
             with(binding) {
-                imageViewMoviePoster.setImageURI("https://image.tmdb.org/t/p/w500${movie.posterPath}")
+                imageViewMoviePoster.setImageURI("${BuildConfig.IMAGES_URL}${movie.posterPath}")
                 textViewMovieTitle.text = movie.title
                 layoutMovieItem.setOnClickListener { listener.onMovieClick(movie) }
             }
@@ -49,7 +50,7 @@ class MoviesListAdapter(private val listener: OnMovieClickListener) :
                 oldItem: MoviesResponse.MovieModel,
                 newItem: MoviesResponse.MovieModel
             ): Boolean =
-                oldItem.id == newItem.id
+                oldItem.movieId == newItem.movieId
 
             override fun areContentsTheSame(
                 oldItem: MoviesResponse.MovieModel,

@@ -1,4 +1,4 @@
-package com.alexstephanov.moviecloud.repositories
+package com.alexstephanov.moviecloud.repositories.movies
 
 import androidx.paging.Pager
 import androidx.paging.PagingData

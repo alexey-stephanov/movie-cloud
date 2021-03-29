@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.rxjava2.cachedIn
 import androidx.paging.rxjava2.observable
 import com.alexstephanov.moviecloud.entities.MoviesResponse
-import com.alexstephanov.moviecloud.repositories.MoviesRepository
+import com.alexstephanov.moviecloud.repositories.movies.MoviesRepository
 import io.reactivex.Observable
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject

@@ -12,14 +12,12 @@ data class MoviesResponse(
 ) {
     data class MovieModel(
         @SerializedName("id")
-        val id: Long,
+        val movieId: Long,
         @SerializedName("original_title")
         val title: String,
         @SerializedName("poster_path")
         val posterPath: String,
         @SerializedName("vote_average")
-        val averageVote: String,
-        @SerializedName("genre_ids")
-        val genreIds: List<Int>
+        val averageVote: String
     )
 }

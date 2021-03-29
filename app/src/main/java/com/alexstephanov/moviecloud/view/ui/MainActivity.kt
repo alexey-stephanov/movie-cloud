@@ -1,7 +1,7 @@
 package com.alexstephanov.moviecloud.view.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.alexstephanov.moviecloud.MovieCloudApplication
 import com.alexstephanov.moviecloud.R
@@ -14,9 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.commit {
-            add(R.id.fragment_container, MoviesFragment())
-            setReorderingAllowed(true)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                replace(R.id.fragment_container, MoviesFragment())
+            }
         }
     }
 }
