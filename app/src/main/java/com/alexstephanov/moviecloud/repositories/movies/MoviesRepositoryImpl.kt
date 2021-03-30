@@ -14,7 +14,9 @@ class MoviesRepositoryImpl @Inject constructor(private val moviesPagingSource: M
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
-                enablePlaceholders = false
+                enablePlaceholders = false,
+                maxSize = 40,
+                prefetchDistance = 5
             ),
             pagingSourceFactory = { moviesPagingSource }
         )

@@ -27,10 +27,9 @@ class LoaderStateAdapter(private val retry: () -> Unit) :
 
         fun bind(loadState: LoadState) {
             with(binding) {
+                groupLoadStateError.isVisible = loadState !is LoadState.Loading
                 progressBarLoadStateItemLoading.isVisible = loadState is LoadState.Loading
-                buttonLoadStateItemRetry.isVisible = loadState is LoadState.Loading
                 buttonLoadStateItemRetry.setOnClickListener { retry() }
-                textViewLoadStateItemErrorMessage.isVisible = loadState is LoadState.Loading
             }
         }
     }

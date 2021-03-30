@@ -15,7 +15,6 @@ class MovieCloudApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Fresco.initialize(this)
-
         Timber.plant(Timber.DebugTree())
     }
 }

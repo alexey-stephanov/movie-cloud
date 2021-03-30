@@ -29,6 +29,16 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     lateinit var viewModelFactory: ViewModelFactory
     private val moviesViewModel: MoviesViewModel by viewModels { viewModelFactory }
 
+    private val moviesListAdapter = MoviesListAdapter {
+        val arguments = Bundle()
+        arguments.putLong("MOVIE_ID", it.movieId)
+        parentFragmentManager.commit {
+            replace(R.id.fragment_container, MovieDetailsFragment::class.java, arguments)
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            addToBackStack("MovieDetailsFragment")
+        }
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -38,16 +48,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     @ExperimentalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val moviesListAdapter = MoviesListAdapter {
-            val arguments = Bundle()
-            arguments.putLong("MOVIE_ID", it.movieId)
-            parentFragmentManager.commit {
-                replace(R.id.fragment_container, MovieDetailsFragment::class.java, arguments)
-                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                addToBackStack("MovieDetailsFragment")
-            }
-        }
 
         binding.recyclerViewMoviesList.apply {
             setHasFixedSize(true)
@@ -61,7 +61,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
     override fun onDestroyView() {
         disposable.dispose()
-
         super.onDestroyView()
     }
 }

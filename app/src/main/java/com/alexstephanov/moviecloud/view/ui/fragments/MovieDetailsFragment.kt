@@ -44,6 +44,7 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
     private fun setupLayout(movie: MovieDetailsModel) {
         with(binding) {
             imageViewMovieBanner.setImageURI("${BuildConfig.IMAGES_URL}${movie.bannerPath}")
+            imageViewMoviePoster.setImageURI("${BuildConfig.IMAGES_URL}${movie.posterPath}")
             textViewMovieTitle.text = movie.title
             textViewMovieOverview.text = movie.overview
         }
